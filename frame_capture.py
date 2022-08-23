@@ -4,9 +4,10 @@ from prepare import prepare
 import os
 import time
 from check_cpu_temp import get_cpu_temp
+import traceback
 
-# WIDTH: MAX 2592, default 640
-# HEIGHT: MAX 1944, default 480
+# WIDTH: MAX 2592(3280), default 640
+# HEIGHT: MAX 1944(2464), default 480
 # ただし、画素数を最大値にすると色チャネルがおかしくなる
 # (WIDTH, HEIGHT) = (1280, 960) までは正しく表示される
 
@@ -34,8 +35,9 @@ while True:
         end_time = time.perf_counter()
         execute_time = end_time - start_time
         fps = int(frame_id / execute_time)
-        print(f"\n{fps=}")
-        print(f"frame size: {frame.shape}")
+        traceback.print_exc()
+        print("fps: " + str(fps) + "\n")
+        print(f"frame size: " + str(frame.shape))
         with open(os.path.join(DIR_PATH, "fps.txt"), "w") as f:
             f.write(str(fps))
         break

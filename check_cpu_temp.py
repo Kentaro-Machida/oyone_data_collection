@@ -1,7 +1,7 @@
 import subprocess
 import re
 
-def get_cpu_temp()->str:
+def get_cpu_temp():
     # 実行コマンド
     cmd = "vcgencmd measure_temp"
 
