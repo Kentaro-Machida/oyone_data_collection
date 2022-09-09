@@ -132,3 +132,4 @@ dmypy.json
 data/
 frame_capture.sh
 start_env.sh
+env_activate.txt

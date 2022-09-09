@@ -20,7 +20,7 @@ while True:
         out.write(frame)
         print(get_cpu_temp())
     except:
-        print(f"frame size: {frame.shape}")
+        print("frame size: " + str(frame.shape()))
         break
 cap.release()
 out.release()
